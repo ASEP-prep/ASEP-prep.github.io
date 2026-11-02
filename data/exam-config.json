@@ -1,0 +1,18 @@
+{
+  "version": "2026-11-02_provisional",
+  "status": "provisional",
+  "status_note": "Προσωρινοί κανόνες από ανεπίσημες πληροφορίες για τη νέα δομή της εξέτασης, όχι από προκήρυξη. Θα ενημερωθούν όταν δημοσιευτεί η προκήρυξη.",
+  "source": "Dokimasia_1.png",
+  "knowledge": {
+    "questions": 25,
+    "time_minutes": 25,
+    "allow_back": false,
+    "penalty_fraction": 0,
+    "base_score": null,
+    "max_score": 100,
+    "weight_percent": 50,
+    "selection": "random_all",
+    "subject_quota": null,
+    "shuffle_options": true
+  }
+}

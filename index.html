@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<!-- Ασφάλεια: εκτελείται μόνο κώδικας από τα αρχεία της εφαρμογής (όχι inline scripts ή κώδικας μέσα σε δεδομένα).
+     Τα στυλ επιτρέπονται inline επειδή η εφαρμογή χρησιμοποιεί style="…" για μπάρες προόδου. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ASEP-prep – ανεπίσημη εξάσκηση για τον διαγωνισμό ΑΣΕΠ</title>
+<meta name="description" content="Ανεπίσημη εφαρμογή εξάσκησης για τον Πανελλήνιο Γραπτό Διαγωνισμό ΑΣΕΠ. Δεν σχετίζεται με το ΑΣΕΠ.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18202D" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-btn" id="btn-back" type="button" aria-label="Πίσω" hidden>
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <a class="brand" href="#home" id="brand">ASEP-prep</a>
+  <span class="topbar-title" id="topbar-title"></span>
+  <a class="icon-btn" href="#prefs" id="btn-prefs" aria-label="Ρυθμίσεις">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+  </a>
+</header>
+
+<div class="update-banner" id="update-banner" hidden>
+  <span>Υπάρχει νέα έκδοση της εφαρμογής.</span>
+  <button type="button" class="btn small" id="btn-update">Ανανέωση</button>
+</div>
+
+<main id="view" tabindex="-1">
+  <p class="loading">Φόρτωση…</p>
+</main>
+
+<footer class="appfoot">
+  <p><strong>Ανεπίσημη εφαρμογή.</strong> Δεν σχετίζεται με το ΑΣΕΠ ή άλλον δημόσιο φορέα. Για τους κανόνες του διαγωνισμού ισχύει μόνο η προκήρυξη.</p>
+  <p class="versions"><span id="ver-app"></span> <span id="ver-bank"></span> <a href="#about">Σχετικά</a></p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal-wrap" id="modal" hidden></div>
+
+<noscript><p class="noscript">Η εφαρμογή χρειάζεται JavaScript.</p></noscript>
+
+<script src="js/version.js"></script>
+<script src="js/util.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/data.js"></script>
+<script src="js/sections/registry.js"></script>
+<script src="js/sections/knowledge/model.js"></script>
+<script src="js/sections/knowledge/question-view.js"></script>
+<script src="js/sections/knowledge/hub.js"></script>
+<script src="js/sections/knowledge/practice.js"></script>
+<script src="js/sections/knowledge/exam.js"></script>
+<script src="js/sections/knowledge/progress.js"></script>
+<script src="js/prefs.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
